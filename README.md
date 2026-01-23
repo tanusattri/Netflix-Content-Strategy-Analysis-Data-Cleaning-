@@ -6,6 +6,7 @@
 - [Tools](#tools)
 - [Data Cleaning](#data-cleaning)
 - [Data Analysis](#data-analysis)
+- [Data Visualization](#data-visualization)
 - [Results](#results)
 - [References](#references)
 
@@ -43,6 +44,20 @@ for col in ['director','cast','country','date_added','rating']:
   df[col] = df[col].fillna(df[col].mode()[0])
 df.isnull().sum()
 df['rating'].unique()
+```
+
+### Data Visualization 
+```Python
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+df = pd.read_csv('/content/netflix_titles_nov_2019.csv')
+plt.figure(figsize=(10, 5))
+sns.boxplot(x=df['duration'], color='skyblue')
+plt.title('Distribution of Duration (Outlier Detection)', fontsize=15)
+plt.xlabel('title')
+plt.grid(axis='x', linestyle='--', alpha=0.7)
+plt.show()
 ```
 
 ### Results 
