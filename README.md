@@ -1,4 +1,4 @@
-# Netflix Content Strategy Analysis Data Cleaning
+<img width="835" height="622" alt="image" src="https://github.com/user-attachments/assets/cd01e42e-7872-4bd7-a08d-ae6f350030c5" /># Netflix Content Strategy Analysis Data Cleaning
 
 ## Table of Contents 
 - [Project Overview](#project-overview)
@@ -57,6 +57,23 @@ sns.boxplot(x=df['duration'], color='skyblue')
 plt.title('Distribution of Duration (Outlier Detection)', fontsize=15)
 plt.xlabel('title')
 plt.grid(axis='x', linestyle='--', alpha=0.7)
+plt.show()
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+df = pd.read_csv('netflix_titles_nov_2019.csv')
+sns.set(style="whitegrid")
+plt.figure(figsize=(8, 6))
+ax = sns.countplot(x='type', data=df, palette='viridis')
+plt.title('Distribution of Netflix Content: Movies vs TV Shows', fontsize=14)
+plt.xlabel('Category', fontsize=12)
+plt.ylabel('Total Count', fontsize=12)
+for p in ax.patches:
+    ax.annotate(f'{int(p.get_height())}', (p.get_x() + p.get_width() / 2., p.get_height()), 
+                ha='center', va='center', fontsize=11, color='black', xytext=(0, 5), 
+                textcoords='offset points')
 plt.show()
 ```
 
