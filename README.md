@@ -1,4 +1,4 @@
-<img width="835" height="622" alt="image" src="https://github.com/user-attachments/assets/cd01e42e-7872-4bd7-a08d-ae6f350030c5" /># Netflix Content Strategy Analysis Data Cleaning
+# Netflix Content Strategy Analysis Data Cleaning
 
 ## Table of Contents 
 - [Project Overview](#project-overview)
@@ -63,7 +63,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-df = pd.read_csv('netflix_titles_nov_2019.csv')
+df = pd.read_csv('/content/netflix_titles_nov_2019.csv')
 sns.set(style="whitegrid")
 plt.figure(figsize=(8, 6))
 ax = sns.countplot(x='type', data=df, palette='viridis')
